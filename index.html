@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghana Realtors Network | Where Real Estate Meets Real Growth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8860B;
+            --black: #000000;
+            --dark-gray: #1A1A1A;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: var(--black);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+        
+        .btn-disabled {
+            background: #666;
+            color: #999;
+            cursor: not-allowed;
+        }
+        
+        .btn-disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .gold-text {
+            color: var(--gold);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('images/image1.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+            border: 4px solid var(--gold);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header-content h2 {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+        
+        .executive-director {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Mission Section */
+        .mission {
+            background-color: var(--dark-gray);
+            position: relative;
+        }
+        
+        .mission::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.3;
+        }
+        
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .mission-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .mission-list {
+            list-style: none;
+        }
+        
+        .mission-list li {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .mission-list li:before {
+            content: "➖";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+        
+        .mission-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Application Form Section */
+        .application-form {
+            background-color: var(--dark-gray);
+            position: relative;
+        }
+        
+        .application-form::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(26, 26, 26, 0.8);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .form-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .form-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 5px;
+            color: var(--white);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+        
+        .checkbox-group label {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+            margin-top: 5px;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(26, 26, 26, 0.8);
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .success-message i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .error-message {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-control.error {
+            border-color: #ff6b6b;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('images/image1.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-btn-disabled {
+            background-color: #666;
+            color: #999;
+            cursor: not-allowed;
+        }
+        
+        .whatsapp-btn-disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: var(--gold);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--white);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .mission-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .header-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .header-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+            
+            .mission-text h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-content h2 {
+                font-size: 1.2rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/image1.jpg" alt="GRN Logo" onerror="this.onerror=null; this.parentElement.innerHTML='GRN';">
+                </div>
+                <h1>Ghana Realtors Network</h1>
+                <h2>Where Real Estate Meets Real Growth</h2>
+                <p class="executive-director">Executive Director: <span class="gold-text">Joshua Okoro (Josh The Realtor)</span></p>
+                <div class="cta-buttons">
+                    <a href="#application" class="btn btn-primary">Join GRN Today</a>
+                    <a href="#mission" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2>Our <span class="gold-text">Mission</span></h2>
+                    <p>Ghana Realtors Network (GRN) is a professional mentorship and networking hub for both new and experienced real estate agents. The group is focused on:</p>
+                    <ul class="mission-list">
+                        <li>Sharing practical knowledge about land acquisition, property rights, and real estate laws in Ghana.</li>
+                        <li>Teaching you how to close big deals effectively.</li>
+                        <li>Building strong networks with other realtors across Ghana.</li>
+                    </ul>
+                    
+                    <h3>What You'll <span class="gold-text">Gain</span></h3>
+                    <ul class="mission-list">
+                        <li>Mentorship on sales, marketing, and closing deals effectively.</li>
+                        <li>Networking with other realtors, investors, and industry professionals.</li>
+                        <li>Access to exclusive tips, seminars, and mentorship opportunities to help you grow in the real estate space.</li>
+                    </ul>
+                    
+                    <h3>Our <span class="gold-text">Goal</span></h3>
+                    <p>Whether you're just starting or already in the field, GRN helps you sharpen your skills, build trust with clients, and become a top-performing realtor in Ghana.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="images/image3.jpg" alt="Modern building architecture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="application-form" id="application">
+        <div class="container">
+            <h2 class="text-center">GRN Partnership & Mentorship <span class="gold-text">Application</span></h2>
+            <p class="text-center" style="margin-bottom: 40px;">Complete this form to join Ghana's largest realtor mentorship and networking community</p>
+            
+            <div class="form-container">
+                <form id="grnApplicationForm">
+                    <!-- Section 1: Personal Information -->
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <p>Help us get to know you better.</p>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" required>
+                            <div class="error-message" id="fullNameError">Please enter your full name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                            <div class="error-message" id="emailError">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number / WhatsApp *</label>
+                            <input type="text" id="phone" name="phone" class="form-control" required>
+                            <div class="error-message" id="phoneError">Please enter your phone number</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company / Organization (if any)</label>
+                            <input type="text" id="company" name="company" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="position">Position / Role *</label>
+                            <select id="position" name="position" class="form-control" required>
+                                <option value="">Select your role</option>
+                                <option value="Realtor">Realtor</option>
+                                <option value="Broker">Broker</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Investor">Investor</option>
+                                <option value="Student">Student</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="error-message" id="positionError">Please select your position/role</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location (City / Region) *</label>
+                            <input type="text" id="location" name="location" class="form-control" required>
+                            <div class="error-message" id="locationError">Please enter your location</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 2: Area of Interest -->
+                    <div class="form-section">
+                        <h3>Area of Interest</h3>
+                        <p>Tell us how you'd like to connect with GRN.</p>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="interest" value="Mentorship">
+                                <span>Mentorship (Learn and grow as a realtor)</span>
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="interest" value="Partnership">
+                                <span>Partnership (Collaborate or sponsor GRN programs)</span>
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="interest" value="Volunteering">
+                                <span>Volunteering / Speaking Opportunities</span>
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="interest" value="Training">
+                                <span>Accessing GRN training & resources</span>
+                            </label>
+                        </div>
+                        <div class="error-message" id="interestError">Please select at least one area of interest</div>
+                    </div>
+                    
+                    <!-- Section 3: Experience & Background -->
+                    <div class="form-section">
+                        <h3>Experience & Background</h3>
+                        <p>Your background helps us tailor mentorship and partnership opportunities.</p>
+                        
+                        <div class="form-group">
+                            <label for="experience">How long have you been in real estate? *</label>
+                            <select id="experience" name="experience" class="form-control" required>
+                                <option value="">Select your experience level</option>
+                                <option value="0-1 year">0-1 year</option>
+                                <option value="2-3 years">2-3 years</option>
+                                <option value="4-6 years">4-6 years</option>
+                                <option value="7+ years">7+ years</option>
+                            </select>
+                            <div class="error-message" id="experienceError">Please select your experience level</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="background">Briefly describe your real estate background or company focus</label>
+                            <textarea id="background" name="background" class="form-control"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="improvement">What specific area(s) do you want to improve or collaborate in?</label>
+                            <textarea id="improvement" name="improvement" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 4: Goals & Expectations -->
+                    <div class="form-section">
+                        <h3>Goals & Expectations</h3>
+                        <p>What do you hope to gain through GRN?</p>
+                        
+                        <div class="form-group">
+                            <label for="shortTermGoal">Your short-term goal in real estate</label>
+                            <input type="text" id="shortTermGoal" name="shortTermGoal" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="longTermVision">Your long-term vision</label>
+                            <input type="text" id="longTermVision" name="longTermVision" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="whyGRN">Why do you want to be part of GRN?</label>
+                            <textarea id="whyGRN" name="whyGRN" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 5: Confirmation & Agreement -->
+                    <div class="form-section">
+                        <h3>Confirmation & Agreement</h3>
+                        <p>Please confirm your interest and consent.</p>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="agreement1" id="agreement1" required>
+                                <span>I understand that GRN is a professional mentorship and networking platform.</span>
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="agreement2" id="agreement2" required>
+                                <span>I agree to receive updates, mentorship offers, and partnership information via email or WhatsApp.</span>
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="agreement3" id="agreement3" required>
+                                <span>I confirm that all information provided is accurate.</span>
+                            </label>
+                        </div>
+                        <div class="error-message" id="agreementError">Please agree to all terms and conditions</div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">Join the Network</button>
+                    </div>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Thank you for connecting with Ghana Realtors Network (GRN)!</h3>
+                    <p>Our team will review your application and reach out shortly.</p>
+                    <p>You will be redirected to our WhatsApp group in a few seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="join">
+        <div class="container">
+            <h2>Join GRN <span class="gold-text">Today!</span></h2>
+            <p>Be part of Ghana's largest realtor mentorship and networking community.</p>
+            
+            <a href="#" class="whatsapp-btn whatsapp-btn-disabled" id="whatsappLink">
+                <i class="fab fa-whatsapp"></i> Complete Form to Join WhatsApp
+            </a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone gold-text"></i>
+                    <span>0597596879</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope gold-text"></i>
+                    <span>ghanarealtorsnetwork@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2023 Ghana Realtors Network. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // In-memory state to track form submission
+        let formSubmitted = false;
+        let formData = null;
+
+        // Form validation and submission handler
+        document.getElementById('grnApplicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset error states
+            resetErrors();
+            
+            // Validate form
+            if (!validateForm()) {
+                return;
+            }
+            
+            // If validation passes, process the form
+            processForm();
+        });
+
+        // Form validation function
+        function validateForm() {
+            let isValid = true;
+            
+            // Required fields validation
+            const requiredFields = [
+                { id: 'fullName', errorId: 'fullNameError' },
+                { id: 'email', errorId: 'emailError' },
+                { id: 'phone', errorId: 'phoneError' },
+                { id: 'position', errorId: 'positionError' },
+                { id: 'location', errorId: 'locationError' },
+                { id: 'experience', errorId: 'experienceError' }
+            ];
+            
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field.id);
+                if (!element.value.trim()) {
+                    showError(field.id, field.errorId);
+                    isValid = false;
+                }
+            });
+            
+            // Email validation
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email && !emailRegex.test(email)) {
+                showError('email', 'emailError');
+                isValid = false;
+            }
+            
+            // Interest validation (at least one checkbox checked)
+            const interestCheckboxes = document.querySelectorAll('input[name="interest"]:checked');
+            if (interestCheckboxes.length === 0) {
+                document.getElementById('interestError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Agreement validation (all checkboxes checked)
+            const agreement1 = document.getElementById('agreement1').checked;
+            const agreement2 = document.getElementById('agreement2').checked;
+            const agreement3 = document.getElementById('agreement3').checked;
+            
+            if (!agreement1 || !agreement2 || !agreement3) {
+                document.getElementById('agreementError').style.display = 'block';
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        // Show error function
+        function showError(fieldId, errorId) {
+            document.getElementById(fieldId).classList.add('error');
+            document.getElementById(errorId).style.display = 'block';
+        }
+
+        // Reset all errors
+        function resetErrors() {
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(error => {
+                error.style.display = 'none';
+            });
+            
+            const errorFields = document.querySelectorAll('.form-control.error');
+            errorFields.forEach(field => {
+                field.classList.remove('error');
+            });
+        }
+
+        // Process form data and redirect to WhatsApp
+        function processForm() {
+            // Collect form data
+            const form = document.getElementById('grnApplicationForm');
+            const data = {};
+            
+            // Get all form fields
+            data.fullName = document.getElementById('fullName').value;
+            data.email = document.getElementById('email').value;
+            data.phone = document.getElementById('phone').value;
+            data.company = document.getElementById('company').value;
+            data.position = document.getElementById('position').value;
+            data.location = document.getElementById('location').value;
+            
+            // Get interests
+            const interests = [];
+            document.querySelectorAll('input[name="interest"]:checked').forEach(cb => {
+                interests.push(cb.value);
+            });
+            data.interest = interests;
+            
+            data.experience = document.getElementById('experience').value;
+            data.background = document.getElementById('background').value;
+            data.improvement = document.getElementById('improvement').value;
+            data.shortTermGoal = document.getElementById('shortTermGoal').value;
+            data.longTermVision = document.getElementById('longTermVision').value;
+            data.whyGRN = document.getElementById('whyGRN').value;
+            
+            // Format message for WhatsApp
+            let message = "GRN Application Form Submission:\n\n";
+            message += "Personal Information:\n";
+            message += `Full Name: ${data.fullName}\n`;
+            message += `Email: ${data.email}\n`;
+            message += `Phone: ${data.phone}\n`;
+            message += `Company: ${data.company || 'N/A'}\n`;
+            message += `Position: ${data.position}\n`;
+            message += `Location: ${data.location}\n\n`;
+            
+            message += "Area of Interest:\n";
+            if (data.interest && data.interest.length > 0) {
+                message += `Interested in: ${data.interest.join(', ')}\n\n`;
+            } else {
+                message += "No interests selected\n\n";
+            }
+            
+            message += "Experience & Background:\n";
+            message += `Experience: ${data.experience}\n`;
+            message += `Background: ${data.background || 'N/A'}\n`;
+            message += `Areas to improve: ${data.improvement || 'N/A'}\n\n`;
+            
+            message += "Goals & Expectations:\n";
+            message += `Short-term goal: ${data.shortTermGoal || 'N/A'}\n`;
+            message += `Long-term vision: ${data.longTermVision || 'N/A'}\n`;
+            message += `Why GRN: ${data.whyGRN || 'N/A'}\n`;
+            
+            // Store in memory
+            formSubmitted = true;
+            formData = data;
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Hide form
+            document.getElementById('grnApplicationForm').style.display = 'none';
+            
+            // Enable WhatsApp link
+            const whatsappLink = document.getElementById('whatsappLink');
+            const whatsappUrl = `https://wa.me/233597596879?text=${encodeURIComponent(message)}`;
+            whatsappLink.href = whatsappUrl;
+            whatsappLink.classList.remove('whatsapp-btn-disabled');
+            whatsappLink.innerHTML = '<i class="fab fa-whatsapp"></i> Join via WhatsApp';
+            
+            // Redirect to WhatsApp after a delay
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 3000);
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
